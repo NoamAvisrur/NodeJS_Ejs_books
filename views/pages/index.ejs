@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>books store</title>
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+         <h2>Our Books</h2>
+        <ul>
+            <% books.forEach(function(book) { %>
+            <li>
+                <button class="delete" data-id=<%= book.id %>>X</button>
+                <img src="<%= book.img %>"/>
+                <a href="/home/<%= book.id %>"><%= book.name %></a>
+                <p><%= book.auther %></p>
+             </li>
+             <% }) %>
+         </ul>
+    </main>
+    <script>
+        var del_button = document.querySelectorAll('.delete');
+        for(var i = 0; i < del_button.length; i++){
+            del_button[i].addEventListener('click', function(e){
+                var id = e.target.dataset.id;
+                fetch('http://localhost:3000/home/' + id, {
+                        method: 'delete'
+                }).then(function(response) {
+                    if(response.status == 200){
+                        e.target.parentNode.remove();
+                        console.log(e.target.parentNode + 'was deleted');
+                    }
+                })
+            });
+        }
+    </script>
+</body>
+</html>
+

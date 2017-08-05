@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>books store</title>
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+         <h2>authers</h2>
+        <ul>
+            <% authers.forEach(function(auther) { %>
+            <li>
+                <img class="auther_img"src="<%= auther.img %>"/>
+                <a href="/authers/<%= auther.id %>"><%= auther.auther %></a>
+             </li>
+             <% }) %>
+         </ul>
+    </main>
+</body>
+</html>

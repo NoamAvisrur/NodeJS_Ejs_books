@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>books store</title>
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+         <h2>Our Books</h2>
+         <h3><%= book.name %></h3>
+         <img class="book_img" src="<%= book.img %>"/>
+         <p class="book_des"><%= book.about %></p>
+    </main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+   {
+       "id": 1,
+       "auther": "Hunter S. Thompson",
+       "img": "http://img.wennermedia.com/social/rs-19038-20140220-hunter-x1800-1392923348.jpg",
+       "about": "Hunter Stockton Thompson (July 18, 1937 – February 20, 2005) was an American journalist and author, and the founder of the gonzo journalism movement. Born in Louisville, Kentucky, to a middle-class family, Thompson had a turbulent youth after the death of his father left the family in poverty. He was unable to formally finish high school as he was incarcerated for 60 days after abetting a robbery. He subsequently joined the United States Air Force before moving into journalism. He traveled frequently, including stints in California, Puerto Rico, and Brazil, before settling in Aspen, Colorado, in the early 1960s."
+   },
+   {
+       "id": 2,
+       "auther": "Harper Lee",
+       "img": "http://www.telegraph.co.uk/content/dam/books/2016/02/19/harper_yes-xlarge_trans_NvBQzQNjv4BqjQ2UCrBIPtt_xabAOiVt-67lbV9ma9EdiywAouUUiMw.jpg",
+       "about": "Nelle Harper Lee (April 28, 1926 – February 19, 2016), better known by her pen name Harper Lee, was an American novelist widely known for To Kill a Mockingbird, published in 1960. Immediately successful, it won the 1961 Pulitzer Prize and has become a classic of modern American literature. Though Lee had only published this single book, in 2007 she was awarded the Presidential Medal of Freedom for her contribution to literature. Additionally, Lee received numerous honorary degrees, though she declined to speak on those occasions. She was also known for assisting her close friend Truman Capote in his research for the book In Cold Blood (1966). Capote was the basis for the character Dill in To Kill a Mockingbird."
+   },
+   {
+       "id": 3,
+       "auther": "Stephen King",
+       "img": "https://www.theparisreview.org/il/627d7513c8/large/KingWAW.jpg",
+       "about": "Stephen Edwin King (born September 21, 1947) is an American author of horror, supernatural fiction, suspense, science fiction, and fantasy. His books have sold more than 350 million copies, many of which have been adapted into feature films, miniseries, television shows, and comic books. King has published 54 novels, including seven under the pen name Richard Bachman, and six non-fiction books. He has written nearly 200 short stories, most of which have been collected in book collections. Many of his stories are set in his home state of Maine. His novella Rita Hayworth and Shawshank Redemption was the basis for the movie The Shawshank Redemption which is widely regarded as one of the greatest films of all time."
+   }
+]

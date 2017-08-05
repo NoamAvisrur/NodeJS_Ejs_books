@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>books store</title>
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+         <h2>About Us</h2>
+            <% about.forEach(function(p) { %>
+            <p><%= p %></p>
+             <% }) %>
+    </main>
+</body>
+</html>
