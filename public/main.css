@@ -36,6 +36,10 @@ nav a{
     margin-right: 2rem;
 }
 
+nav a:last-child{
+    color: #e43d1f;
+}
+
 nav a:hover{
     color: #666;
 }
@@ -44,7 +48,7 @@ main{
     width: 60%;
     margin: auto;
 }
-main h2{
+main h2, .form_wrapper h2{
     color: #0a4e51;
     font-size: 5rem;
     margin-bottom: 0;
@@ -111,7 +115,7 @@ main ul li:hover button{
     opacity: 1;
 }
 
-.delete{
+.delete, .add_to_cart{
     position: absolute;
     right: 0.5rem;
     top: 0.5rem;
@@ -126,14 +130,47 @@ main ul li:hover button{
     outline: none;
 }
 
-.book_img{
+.book_img {
     width: 180px;
+    float: right;
+    margin: 0 0 2rem 1rem;
+}
+.auther_img{
+    width: 250px;
     float: right;
     margin: 0 0 2rem 1rem;
 }
 
 .about_des {
     width: 50%;
+}
+
+.form_container{
+    background-color: aliceblue;
+}
+
+.form_wrapper{
+    width: 60%;
+    margin: auto;
+    margin-bottom: 4rem;
+    padding-bottom: 1rem;
+}
+
+form input[type="text"]{
+    display: block;
+    height: 20px;
+    width: 250px;
+    margin-bottom: 1rem;
+}
+form textArea {
+    width: 100%;
+    resize: none;
+    margin-bottom: 1rem;
+}
+
+form input[type="submit"]{
+    background-color: #0a4e51;
+    color: #eee;
 }
 
 

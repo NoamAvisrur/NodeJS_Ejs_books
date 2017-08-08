@@ -1,0 +1,35 @@
+<%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+         <h2>My Shoping Cart</h2>
+        <ul>
+            <% books.forEach(function(book) { %>
+            <li>
+                <button title="remove from cart" class="delete" data-id=<%= book.id %>>X</button>
+                <img src="<%= book.img %>"/>
+                <a href="/books/<%= book.id %>"><%= book.name %></a>
+                <p><%= book.auther %></p>
+             </li>
+             <% }) %>
+         </ul>
+    </main>
+    <script>
+        var del_button = document.querySelectorAll('.delete');
+        for(var i = 0; i < del_button.length; i++){
+            del_button[i].addEventListener('click', function(e){
+                var id = e.target.dataset.id;
+                fetch('http://localhost:3000/cart/' + id, {
+                        method: 'delete'
+                }).then(function(response) {
+                    if(response.status == 200){
+                        e.target.parentNode.remove();
+                        console.log(e.target.parentNode + 'was deleted');
+                    }
+                })
+            });
+        }
+    </script>
+</body>
+</html>
+

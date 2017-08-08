@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>books store</title>
-    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="main.css">
-</head>
+<%- include('../partials/head') %>
 <body>
     <%- include('../partials/header') %>
     <main>
@@ -13,29 +6,56 @@
         <ul>
             <% books.forEach(function(book) { %>
             <li>
-                <button class="delete" data-id=<%= book.id %>>X</button>
+                <button title="add to cart" class="add_to_cart" data-id=<%= book.id %>>+</button>
                 <img src="<%= book.img %>"/>
-                <a href="/home/<%= book.id %>"><%= book.name %></a>
+                <a href="/books/<%= book.id %>"><%= book.name %></a>
                 <p><%= book.auther %></p>
              </li>
              <% }) %>
          </ul>
     </main>
+    <div class="form_container">
+         <%- include('../partials/form') %>
+    </div>
     <script>
-        var del_button = document.querySelectorAll('.delete');
-        for(var i = 0; i < del_button.length; i++){
-            del_button[i].addEventListener('click', function(e){
+        var add_button = document.querySelectorAll('.add_to_cart');
+        for(var i = 0; i < add_button.length; i++){
+            add_button[i].addEventListener('click', function(e){
                 var id = e.target.dataset.id;
-                fetch('http://localhost:3000/home/' + id, {
-                        method: 'delete'
+                fetch('http://localhost:3000/books/' + id, {
+                        method: 'post'
                 }).then(function(response) {
                     if(response.status == 200){
-                        e.target.parentNode.remove();
-                        console.log(e.target.parentNode + 'was deleted');
+                        console.log(e.target.parentNode + 'was added to cart');
                     }
                 })
             });
         }
+
+
+        document.querySelector('form').addEventListener('submit', function(e){
+            e.preventDefault();
+            var formData = "name=" + document.querySelector('input[name="name"]').value + 
+            "&auther=" + document.querySelector('input[name="auther"]').value +
+            "&img=" + document.querySelector('input[name="img"]').value +
+            "&about=" + document.querySelector('textarea').value;
+            var request = new Request('http://localhost:3000/books/', {
+                method: 'POST', 
+                body: formData,
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+            });
+            SendInfo(request);
+        });
+
+        function SendInfo(request){
+            fetch(request).then(function(data){
+                return data.text();
+            });
+        }
+
+
+
+
     </script>
 </body>
 </html>
