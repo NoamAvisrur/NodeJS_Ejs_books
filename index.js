@@ -11,6 +11,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
+var port = process.env.PORT || 3000;
+
 app.get('/books', function(req, res) {
     var readFile = util.promisify(fs.readFile);
     readFile('data/books.json', 'utf-8')
@@ -155,6 +157,6 @@ app.delete('/cart/:id', function(req, res){
     })
 });   
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log('Example app listening on port 3000!')
 });

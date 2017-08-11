@@ -166,6 +166,7 @@ form textArea {
     width: 100%;
     resize: none;
     margin-bottom: 1rem;
+    font-family: arial;
 }
 
 form input[type="submit"]{
